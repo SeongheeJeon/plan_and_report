@@ -1,0 +1,41 @@
+extends layouts/main
+
+block content
+  link(rel='stylesheet' href='/static/styles.css')
+  .colorTagAdd
+    form(method="post" action='/dailyPage')
+      input(type='text' placeholder='tag name' name="tagName")
+      input(type="color" name="tagColor" value="black")
+      input(type="submit", value="ADD TAG")
+  .daily
+    .date
+      input.dateInput(type='date')
+      button.dateSubmitBtn 보기
+    .planner
+      .content
+        p#day1_1 조깅&명상
+        p#day1_2 아침식사
+        p#day1_3 JS 공부
+        p#day1_4 점심식사
+        p#day1_5 웹 스터디 미팅
+        p#day1_6
+          | 민경이랑 카페
+          span.color-left
+          span.color-right
+        p#day1_7 저녁식사
+      .colorbar
+        .whenMouseHover
+          span.mouseHoverBar
+          span.tooltip 07:10
+        ul
+          li#c1
+          li#c2
+    .timebar
+      ul
+    .report
+      .colorbar
+      .content
+
+  script(src='/static/main.js')
+  script(src='/static/colorbar.js')
+  script(src='/static/timebar.js')
