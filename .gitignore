@@ -104,3 +104,4 @@ dist
 .tern-port
 
 naming.txt
+package-lock.json
